@@ -91,7 +91,7 @@ To get set up with a copy of my project you can do these multiple ways.
 1. You can manually download locally to your machine and then upload to your preferred IDE. 
 2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
 3. You will need to update a few environment variables before we can run the app.
-	1. `app.config["MONGO_DBNAME"] = ""`
+	1. `app.config["MONGO_DBNAME"] = "my-cookbook-nuno"`
 	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
 	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
 4. Once the above steps are complete you can try run the application using `python3 main.py`
@@ -100,7 +100,7 @@ To get set up with a copy of my project you can do these multiple ways.
 1. Clone my repo via Git using the following command 
 2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
 3. You will need to update a few environment variables before we can run the app.
-	1. `app.config["MONGO_DBNAME"] = "cookbook_creation"`
+	1. `app.config["MONGO_DBNAME"] = "my-cookbook-nuno"`
 	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
 	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
 4. Once the above steps are complete you can try run the application using `python3 app.py`
