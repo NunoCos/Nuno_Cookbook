@@ -1,7 +1,21 @@
+/* Navbar */
+
 nav .brand-logo {
     position: absolute;
     color: #fff;
     display: inline-block;
     font-size: 1.5rem;
     padding: 0;
+}
+
+.title4 {
+    color: #114b5f;
+}
+
+
+/* Buttons*/
+
+.nuno-button {
+    background-color: #C8BFC7;
+    color: black;
 }
