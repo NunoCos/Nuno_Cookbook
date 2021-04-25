@@ -1,45 +1,106 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Nuno Cookbook - Milestone Project
 
-Welcome USER_NAME,
+Deployed page goes here ->
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Collection of Various kinds of recipes.
+This project is dedicated to users who are willing to learn cooking.
+It contains various kinds of recipes and user can upload their own recipes too.
+ 
+## UX
+ 
+This website consists of a user friendly layout. 
 
-## Gitpod Reminders
+It's built for two kind of users:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1. One who wants learn Cooking (To be a chef)
+2. One who wants to teach Cooking (Wants to share their talent)
 
-`python3 -m http.server`
+Some Users will visit the site to learn new recipes whereas others visit to upload their recipies so that other users can learn and appreciate their talent.
 
-A blue button should appear to click: _Make Public_,
+## Wireframes 
 
-Another blue button should appear to click: _Open Browser_.
+#### Homepage
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![](static/assets/images/home.png)
 
-A blue button should appear to click: _Make Public_,
+#### Login
 
-Another blue button should appear to click: _Open Browser_.
+![](static/assets/images/Login.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features
 
-## Updates Since The Instructional Video
+- User can add new recipies using their name and email.
+- User can view all kind of recipes in website uploaded by him or other users
+- User can edit recipe uploaded by him
+- User can delete already added recipe uploaded by him
+- User can filter recipies uploaded by him only. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Features Left to Implement
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Testing
+Most of the applications testing was done throughout development, most of which was manual tests. I will outline most of what I did below for documentation purposes.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
----
+## Technologies Used
 
-Happy coding!
+- [Python](https://www.python.org/doc/)
+    - The project uses **Python** as backend.
+    
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - The project uses **Flask** framework to built a website.
+  
+ - [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation.
+   
+ - [Materialize](https://materializecss.com/)
+    - The project uses **Materialize** to build responsive and creative site.
+    
+- [MONGO DB](https://docs.mongodb.com/)
+    - The project uses **Mongo DB** to store and retrieve the data.
+   
+
+### Testing
+
+
+## Deployment 
+Getting my application ready for deployment consisted of the following: - 
+1. Removing all my hard-coded environment variables to project my keys and secrets. These were placed in the heroku Config Vars for production.
+2. Ensuring the applications requirements.txt is up-to-date with all the latest packages installed for my app being noted on this file. 
+	**The command to update requirements**
+		```
+		pip3 freeze > requirements.txt
+		```
+3. Set up the Procfile - *A Procfile is required by Heroku in order to tell the service worker what command to run for my application to start.*
+4. Set Flask's debugging to False.
+5. Push all my latest production ready code to GitHub ready for deployment via Heroku's GitHub function where you can deploy from GitHub the production ready app.
+
+**Upon successful deployment Heroku will give you the URL that is hosted your app**
+
+*Upon unsuccessful deployment Heroku will log the cause of the error and this is view able in the 'view log' section on the Heroku website. Here you will find a detailed report of what has cause your application not to be deployed successfully. *
+
+### Expanding on my project
+
+To get set up with a copy of my project you can do these multiple ways. 
+
+**Via GitHub** -  
+1. You can manually download locally to your machine and then upload to your preferred IDE. 
+2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
+3. You will need to update a few environment variables before we can run the app.
+	1. `app.config["MONGO_DBNAME"] = ""`
+	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
+	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
+4. Once the above steps are complete you can try run the application using `python3 main.py`
+
+**Via the CLI** -
+1. Clone my repo via Git using the following command 
+2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
+3. You will need to update a few environment variables before we can run the app.
+	1. `app.config["MONGO_DBNAME"] = "cookbook_creation"`
+	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
+	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
+4. Once the above steps are complete you can try run the application using `python3 app.py`
