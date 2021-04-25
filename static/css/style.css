@@ -19,3 +19,8 @@ nav .brand-logo {
     background-color: #C8BFC7;
     color: black;
 }
+
+/* Flash Messages */
+.flashes h4 {
+    line-height: 2;
+}
