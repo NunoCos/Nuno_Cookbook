@@ -11,4 +11,26 @@
         </div>
     </div>
 
+    <br>
+    <ul class="collapsible popout">
+        {% for recipe in recipes %}
+        <li>
+            <div class="collapsible-header white-text teal lighten-1">
+                <div class="col s3 ">
+                    <i class="fas fa-caret-down"></i>
+                    <a class="waves-effect waves-light btn-small green">Button</a>
+                </div>
+                <div class="col s9">
+                    <strong>{{ recipe.recipe_name }}</strong>:  <em>{{ recipe.prep_time }}</em>
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <p>{{ recipe.recipe_description }}</p>
+                <p>{{ recipe.recipe_ingredients }}</p>
+                <p>{{ recipe.recipe_steps }}</p>
+                <p><b>Created by:</b> {{ recipe.created_by }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
