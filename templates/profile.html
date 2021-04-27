@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12 m8 offset-m2 prof">
             <div class="card-panel">
                 <h3 class="center-align">
                     {{ username }}'s Profile
@@ -10,6 +10,22 @@
             </div>
         </div>
     </div>
+        <section>
+        <div class="row">
+            <div class="col s12 m8 center-align offset-m2">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="Tablet with Recipe">
+                        <span class="card-title shadow">Click Bellow to View or Add Recipe</span>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="btn-small" href={{ url_for('get_recipe')}}>View Recipe</a>
+                    <a class="btn-small" href={{ url_for('add_recipe') }}>Add Recipe</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
 
 {% endblock %}
