@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <br>
+<!-- Slider-->
+<!-- Code from (Traversy Media)(https://www.youtube.com/watch?v=MaP3vO-vEsg)-->
 <div class="slider">
     <ul class="slides">
         <li>
-            <img src="static/assets/images/eaters-collective-12eHC6FxPyg-unsplash.jpg">
+            <img src="static/assets/images/eaters-collective-12eHC6FxPyg-unsplash.jpg" alt="pasta">
             <div class="caption left-align">
                 <h2 class="black-text shadow">Delicious Recipes</h2>
                 <br>
@@ -12,7 +14,7 @@
             </div>
         </li>
         <li>
-            <img src="static/assets/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg">
+            <img src="static/assets/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg" alt="salad">
             <div class="caption center-align">
                 <h3 class="black-text shadow">Register to start adding Recipies</h3>
                 <br>
@@ -22,7 +24,7 @@
             </div>
         </li>
         <li>
-            <img src="static/assets/images/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg">
+            <img src="static/assets/images/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg" alt="pancakes">
             <div class="caption right-align">
                 <h2 class="shadow">Recipe of the week</h2>
                 <a class="teal lighten-1 waves-effect waves-light btn-large" href="#week_recipe">Check Recipes</a>
@@ -59,7 +61,7 @@
 
 <!-- All Recipes Section-->
 {% if recipes|length > 0 %}
-<a name="all_recipes"></a>
+<a id="all_recipes"></a>
 <div class="container">
     <ul class="collapsible popout">
         {% for recipe in recipes %}
@@ -107,7 +109,7 @@
     {% endif %}
 </div>
 <!-- Recipe of the week section-->
-<a name="week_recipe"></a>
+<a id="week_recipe"></a>
 <div class="container">
     <h3 class="center-align teal-text lighten-1">Recipes of the week</h3>
     <br>
@@ -115,7 +117,7 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
-                    <img src="static/assets/images/mateusz-feliksik-GgHv0981LZg-unsplash.jpg" style="height: 329px;">
+                    <img src="static/assets/images/mateusz-feliksik-GgHv0981LZg-unsplash.jpg" alt="yogurt" style="height: 329px;">
                     <span class="card-title">Instant frozen berry yogurt</span>
                 </div>
                 <div class="card-content">
@@ -127,7 +129,7 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
-                    <img src="static/assets/images/adam-przeniewski-YD4svPPdOU4-unsplash.jpg" style="height: 329px;">
+                    <img src="static/assets/images/adam-przeniewski-YD4svPPdOU4-unsplash.jpg" alt="pudding" style="height: 329px;">
                     <span class="card-title">Quick mango pudding</span>
                 </div>
                 <div class="card-content">
