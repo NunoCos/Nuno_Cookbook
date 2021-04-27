@@ -37,8 +37,7 @@ Lots of people may use cookbooks to refer from when cooking a meal, this app all
 - User can filter recipies uploaded by him only. 
 
 ---
-### Features Left to Implement
-- Possibility of adding images to the recipes and display them as a card
+### Features Left to Implements
 - Adding an online Store, so that is possible to sell recipe books and kitchen utensils
 ---
 
