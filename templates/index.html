@@ -6,20 +6,26 @@
         <li>
             <img src="static/assets/images/eaters-collective-12eHC6FxPyg-unsplash.jpg">
             <div class="caption left-align">
-                <h2 class="black-text">Delicious Recipes</h2>
+                <h2 class="black-text shadow">Delicious Recipes</h2>
+                <br>
+                <a class="teal lighten-1 waves-effect waves-light btn-large" href="#all_recipes">Check Recipes</a>
             </div>
         </li>
         <li>
             <img src="static/assets/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg">
             <div class="caption center-align">
-                <h3 class="black-text">Register to start adding Recipies</h3>
+                <h3 class="black-text shadow">Register to start adding Recipies</h3>
+                <br>
+                <a class="teal lighten-1 waves-effect waves-light btn-large" href="{{ url_for('login') }}">Login</a>
+                <a class="teal lighten-1 waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register</a>
 
             </div>
         </li>
         <li>
             <img src="static/assets/images/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg">
             <div class="caption right-align">
-                <h2>Learn how to Cook</h2>
+                <h2 class="shadow">Recipe of the week</h2>
+                <a class="teal lighten-1 waves-effect waves-light btn-large" href="#week_recipe">Check Recipes</a>
             </div>
         </li>
     </ul>
@@ -53,6 +59,7 @@
 
 <!-- All Recipes Section-->
 {% if recipes|length > 0 %}
+<a name="all_recipes"></a>
 <div class="container">
     <ul class="collapsible popout">
         {% for recipe in recipes %}
@@ -99,4 +106,36 @@
     </div>
     {% endif %}
 </div>
+<!-- Recipe of the week section-->
+<a name="week_recipe"></a>
+    <h3 style="color:#114B5F">Recipe of the week</h3>
+    <section>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1613482084248-ab36d58bab87?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" alt="Frozen yogurt">
+                        <span class="card-title shadow">Instant frozen berry yogurt</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col s12 m6">
+                        <h5>Description</h4>
+                            <p>Three ingredients and two minutes is all you need to whip up this low-fat, low-calorie yogurt, which
+                                is ideal for eating after exercise</p>
+                            <h5>Ingredients</h4>
+                                <ul>
+                                    <li>250g frozen mixed berry 250g</li>
+                                    <li>0%-fat Greek yogurt</li>
+                                    <li>1 tbsp honey or agave syrup</li>
+                                </ul>
+                                <h5>Preparation</h4>
+                                    <p>Blend berries, yogurt and honey or agave syrup in a food processor for 20 seconds,
+                                        until it comes together to a smooth ice-cream texture. Scoop into bowls and serve</p>
+                                    <p>Created by: zcanao</p>
+                    </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

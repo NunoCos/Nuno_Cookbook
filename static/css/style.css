@@ -28,3 +28,7 @@ nav .brand-logo {
     margin: 5px;
     line-height: 42px;
 }
+
+.shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
