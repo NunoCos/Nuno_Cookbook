@@ -2,7 +2,10 @@
 
 [ Deployed page](https://my-cookbook-nuno.herokuapp.com/)
 
-What is 'Cookbook | Cookbook Website' - It's an app built with Flask and MongoDB. In this application I use technologies learnt on my coding journey to demonstrate how a document-based database can be utilise efficiently and effectively to create simple yet effective scalable apps on the web.
+---
+## Project description
+
+- What is 'Cookbook | Cookbook Website' - It's an app built with Flask and MongoDB. In this application I use technologies learnt on my coding journey to demonstrate how a document-based database can be utilise efficiently and effectively to create simple yet effective scalable apps on the web.
 ---
 ## UX
  
