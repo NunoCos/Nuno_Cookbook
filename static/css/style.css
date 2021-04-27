@@ -40,14 +40,7 @@ nav .brand-logo {
     font-size: 20px;
 }
 
-.card .card-image img {
-    display: block !important;
-    border-radius: 2px 2px 0 0 !important;
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 500px !important;
+.card-image{
+    height: 400px important!;
+    overflow: hidden;
 }
