@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_recipe")
 def get_recipe():
@@ -53,15 +54,15 @@ def register():
 def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-           {"username": request.form.get("username".lower())})
-        
+            {"username": request.form.get("username".lower())})
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for("profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
