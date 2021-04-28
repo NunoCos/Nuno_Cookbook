@@ -2,41 +2,33 @@
 {% block content %}
 
     <h3 class="center-align title4">Register</h3>
-
+    
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
                 <!-- username -->
                 <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix teal-text text-lighten-1"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
-					</div>
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-plus prefix teal-text text-lighten-1"></i>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
                 </div>
                 <!-- email -->
                 <div class="row">
-					<div class="input-field col s12">
-						<i class="far fa-envelope prefix teal-text text-lighten-1"></i>
-						<input id="user_email" name="user_email" type="text" class="validate" required>
-						<label for="user_email">Email</label>
-					</div>
-                </div>
-                <!-- User Image -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-link prefix teal-text text-lighten-1"></i>
-						<input id="user_image" name="user_image" type="text" class="validate">
-						<label for="username">Profile Picture</label>
-					</div>
+                    <div class="input-field col s12">
+                        <i class="far fa-envelope prefix teal-text text-lighten-1"></i>
+                        <input id="user_email" name="user_email" type="text" class="validate" required>
+                        <label for="user_email">Email</label>
+                    </div>
                 </div>
                 <!-- password -->
                 <div class="row">
                     <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix teal-text text-lighten-1"></i>
-                        <input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <i class="fas fa-user-lock prefix teal-text text-lighten-1"></i>
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
@@ -48,15 +40,14 @@
                 </div>
             </div>
         </form>
-
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Already have an Account?
+                <a href="{{ url_for('login') }}" class="teal-text text-lighten-1">Login Here</a>
+            </p>
         </div>
-            <div class="row">
-            <div class="col s12">
-                <p class="center-align">
-                    Already have an Account?
-                    <a href="{{ url_for('login') }}" class="teal-text text-lighten-1">Login Here</a>
-                </p>
-            </div>
-        </div>
+    </div>
 
 {% endblock %}
