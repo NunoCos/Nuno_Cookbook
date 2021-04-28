@@ -38,7 +38,9 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "user_email": request.form.get("user_email").lower(),
+            "user_picture": request.form.get("user_picture")
         }
         mongo.db.users.insert_one(register)
 
@@ -84,7 +86,6 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
-
 
 @app.route("/logout")
 def logout():
