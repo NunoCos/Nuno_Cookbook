@@ -1,5 +1,7 @@
 # Nuno Cookbook - Milestone Project
 
+![](static/assets/images/responsive.png)
+
 [ Deployed page](https://my-cookbook-nuno.herokuapp.com/)
 
 ---
