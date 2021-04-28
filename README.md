@@ -26,11 +26,28 @@ Lots of people may use cookbooks to refer from when cooking a meal, this app all
 
 ![](static/assets/images/home.png)
 
+---
 #### Login
 
 ![](static/assets/images/Login.png)
 
 ---
+
+#### Add Recipe
+![](static/assets/images/addrecipe.png)
+
+---
+
+#### Profile
+![](static/assets/images/Profile.png)
+
+---
+
+#### Register
+![](static/assets/images/register.png)
+
+---
+
 ## Features
 
 - User can add new recipies using their name and email.
@@ -85,6 +102,7 @@ This is so when Flask ever encounters an error the application knows to display 
 ---
 
 **Testing CRUD**
+
 **CREATE**
 - To test my create functionality of my app I would continuously fill out a recipe form and test that the route when posting create a new recipe within my recipe collection and that all the fields I needed were created successfully.
 
