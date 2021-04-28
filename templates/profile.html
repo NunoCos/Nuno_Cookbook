@@ -20,12 +20,17 @@
                     <div class="card-reveal">
                         <span class="card-title teal-text text-darken-4">{{ username }}'s Profile<i
                                 class="far fa-times-circle right"></i></span>
-                        <p class="teal-text lighten-2">Click here to View all Recipes you can edit or delete the ones that you created</p>
+                        <p class="teal-text lighten-2">Click here to View all Recipes. You can edit or delete the ones that you created.</p>
                         <p><a class="btn-large" href={{ url_for('get_recipe')}}>View Recipe</a></p>
+                        <br>
+                        <hr>
                         <p class="teal-text lighten-2">Click here to add one Recipe</p>
                         <p><a class="btn-large" href={{ url_for('add_recipe') }}>Add Recipe</a></p>
+                        <br>
+                        <hr>
                         <p class="teal-text lighten-2">Click here to logout</p>
                         <p><a href="{{ url_for('logout') }}" class="btn-large">Logout</a></p>
+                        <br>
                     </div>
                 </div>
             </div>
