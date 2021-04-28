@@ -204,6 +204,8 @@ To get set up with a copy of my project you can do these multiple ways.
 [Code Institute](https://codeinstitute.net/)
 - CRUD functionality based on Task Manager functionality and Authentication process
 
+[Stack Overflow](https://stackoverflow.com/questions/19179424/how-to-wrap-text-around-an-image-using-html-css/19179519)
+- Code for resizing image inside collapsible and adapted to my code
 ---
 ## Resources Used
 - [Fontawesome Icons](https://fontawesome.com/)
