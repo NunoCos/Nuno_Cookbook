@@ -39,3 +39,86 @@ nav .brand-logo {
     color: #114b5f;
     font-size: 20px;
 }
+
+/* Footer */
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+.footer-main-div {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 0px;
+    background-color: #26A69A;
+}
+
+.footer-social-icons {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.footer-social-icons ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-social-icons ul li {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 100%;
+    background: white;
+}
+.footer-social-icons ul li:hover{
+    background:#ddfcad;
+}
+.footer-social-icons ul li a{
+    color: #26A69A;
+    font-size: 25px;
+    display: block;
+}
+.footer-social-icons ul li a i{
+    line-height: 50px;
+}
+.footer-menu-one{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
+
+}
+.footer-menu-one ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.footer-menu-one ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer-menu-one ul li a{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+.footer-menu-one ul li a:hover{
+    color: #ddfcad;
+}
+.footer-bottom{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    color: #26A69A;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
