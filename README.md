@@ -2,7 +2,7 @@
 
 ![](static/assets/images/responsive.png)
 
-[ Deployed page](https://my-cookbook-nuno.herokuapp.com/)
+[Deployed page](https://my-cookbook-nuno.herokuapp.com/)
 
 ---
 ## Project description

@@ -82,9 +82,9 @@
             </div>
             <div class="collapsible-body">
                 <img src="{{ recipe.image_url}}" class="responsive-img TextWrap">
-                <p>{{ recipe.recipe_description }}</p>
-                <p>{{ recipe.recipe_ingredients }}</p>
-                <p>{{ recipe.recipe_steps }}</p>
+                <p><b>Description</b><br>{{ recipe.recipe_description }}</p>
+                <p><b>Ingredients</b><br>{{ recipe.recipe_ingredients }}</p>
+                <p><b>Preparation</b><br>{{ recipe.recipe_steps }}</p>
                 <p><b>Created by:</b> {{ recipe.created_by }}</p>
             </div>
         </li>
