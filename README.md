@@ -145,7 +145,15 @@ My app will be fully functional across all major modern browsers. I have tested 
 
 ---
 ## Deployment 
+
+##### GitHub Pages
+
+1. A local project was created in GitHub with a new repository called 'Mind-Gym-Project'
+2. The project had regular push and detailed commits which were pushed to the GitHub website before deployment
+3. The project was deployed by logging in to GitHub and locating the [GitHub Repository](https://github.com/NunoCos/Nuno_Cookbook)
+
 Getting my application ready for deployment consisted of the following: - 
+
 1. Removing all my hard-coded environment variables to project my keys and secrets. These were placed in the heroku Config Vars for production.
 2. Ensuring the applications requirements.txt is up-to-date with all the latest packages installed for my app being noted on this file. 
 	**The command to update requirements**
@@ -172,7 +180,7 @@ To get set up with a copy of my project you can do these multiple ways.
 	1. `app.config["MONGO_DBNAME"] = "my-cookbook-nuno"`
 	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
 	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
-4. Once the above steps are complete you can try run the application using `python3 main.py`
+4. Once the above steps are complete you can try run the application using `python3 app.py`
 
 **Via the CLI** -
 1. Clone my repo via Git using the following command 
@@ -203,3 +211,17 @@ To get set up with a copy of my project you can do these multiple ways.
 - [Google](https://google.com/)
 - [YouTube](https://www.youtube.com/)
 - [Unsplash](https://unsplash.com/)
+
+---
+
+## Acknowledgements
+
+
+
+---
+## Support
+
+For any issues or information, please email me on nuno18_9@hotmail.com
+
+
+Thank you for the time reviewing my Readme file and hope you enjoy my project.
