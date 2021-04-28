@@ -1,80 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="teal-text center align">Add Recipe</h3>   
-        <div class="row">
-            <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-                <!-- Recipe Name-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-hamburger prefix teal-text text-lighten-1"></i>
-                        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
-                            required>
-                        <label for="recipe_name">Recipe Name</label>
-                    </div>
+<h3 class="teal-text center align">Add Recipe</h3>
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
+        <div class="card-panel">
+            <!-- Recipe Name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-hamburger prefix teal-text text-lighten-1"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+                    <label for="recipe_name">Recipe Name</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-link prefix teal-text text-lighten-1"></i>
-                        <input id="image_url" name="image_url" class="validate" type="text">
-                        <label for="image_url">Image Link * see bellow</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-link prefix teal-text text-lighten-1"></i>
+                    <input id="image_url" name="image_url" class="validate" type="text">
+                    <label for="image_url">Image Link * see bellow</label>
                 </div>
-                <!-- Recipe Preparation Time-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-stopwatch prefix teal-text text-lighten-1"></i>
-                        <textarea id="prep_time" name="prep_time" minlength="5" maxlength="50"
-                            class="materialize-textarea validate" required></textarea>
-                        <label for="prep_time">Preparation Time (in minutes)</label>
-                    </div>
+            </div>
+            <!-- Recipe Preparation Time-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-stopwatch prefix teal-text text-lighten-1"></i>
+                    <textarea id="prep_time" name="prep_time" minlength="5" maxlength="50"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="prep_time">Preparation Time (in minutes)</label>
                 </div>
-                <!-- Recipe Description-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-blender prefix teal-text text-lighten-1"></i>
-                        <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="500"
-                            class="materialize-textarea validate" required></textarea>
-                        <label for="recipe_description">Recipe Description</label>
-                    </div>
+            </div>
+            <!-- Recipe Description-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-blender prefix teal-text text-lighten-1"></i>
+                    <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="500"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_description">Recipe Description</label>
                 </div>
-                <!-- Recipe Ingredients-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-shopping-basket prefix teal-text text-lighten-1"></i>
-                        <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="1000"
-                            class="materialize-textarea validate" required></textarea>
-                        <label for="recipe_ingredients">Ingredients</label>
-                    </div>
+            </div>
+            <!-- Recipe Ingredients-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-shopping-basket prefix teal-text text-lighten-1"></i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="1000"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_ingredients">Ingredients</label>
                 </div>
-                <!-- Recipe Steps-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-list-ol prefix teal-text text-lighten-1"></i>
-                        <textarea id="recipe_steps" name="recipe_steps" minlength="5" maxlength="1000"
-                            class="materialize-textarea validate" required></textarea>
-                        <label for="recipe_steps">Steps</label>
-                    </div>
+            </div>
+            <!-- Recipe Steps-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-ol prefix teal-text text-lighten-1"></i>
+                    <textarea id="recipe_steps" name="recipe_steps" minlength="5" maxlength="1000"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_steps">Steps</label>
                 </div>
-                <!-- Submit button-->
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <a href="{{ url_for('get_recipe') }}" class="btn waves-effect waves-light red">
-                            Cancel <i class="fas fa-times-circle right"></i>
-                        </a>
-                        <button class="btn waves-effect waves-light pulse" type="submit">Add Recipe
-                            <i class="fas fa-plus-square right"></i>
-                        </button>
-                    </div>
+            </div>
+            <!-- Submit button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipe') }}" class="btn waves-effect waves-light red">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                    <button class="btn waves-effect waves-light pulse" type="submit">Add Recipe
+                        <i class="fas fa-plus-square right"></i>
+                    </button>
                 </div>
-    
-            </form>
+            </div>
         </div>
-        <div class="instructions">
-            <div class="teal-text text-darken-2 center-align">
-                <h6>To add the image</h6>
-                    <p>From the desktop right click on the image and press copy image link than paste it on the form</p>
-                    <p>From Mobile click and hold the image and press open image in new tab and then copy the link and past it on the form</p>
-            </div   
+    </form>
+</div>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel indigo lighten-5 center-align">
+            <h6>To add the image</h6>
+            <p>From the desktop right click on the image and press copy image link than paste it on the form</p>
+            <p>From Mobile click and hold the image and press open image in new tab and then copy the link and past it
+                on
+                the form</p>
         </div>
-{% endblock %}
+    </div>
+</div>
+    {% endblock %}
