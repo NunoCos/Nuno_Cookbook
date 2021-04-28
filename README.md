@@ -56,7 +56,7 @@ Lots of people may use cookbooks to refer from when cooking a meal, this app all
 - User can view all kind of recipes in website uploaded by him or other users
 - User can edit recipe uploaded by him
 - User can delete already added recipe uploaded by him
-- User can filter recipies uploaded by him only. 
+- User can search recipies. 
 
 ---
 ### Features Left to Implements
