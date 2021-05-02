@@ -40,7 +40,7 @@
 <br>
 <div class="container">
     <div class="row card-panel grey lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row center-align">
                 <div class="input-field col s12">
                     <i class="fas fa-search prefix teal-text text-lighten-1"></i>
@@ -164,4 +164,34 @@
         </div>
     </div>
 </div>
+<section id="contact" class="section section-contact">
+    <h3 class="center-align teal-text lighten-1">Contact Us</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card-panel grey lighten-3 contact-form">
+                    <form onsubmit="return sendMail(this);" id="contactUs">
+                        <h5>Have a Question or an issue?</h5>
+                        <div class="input-field">
+                            <input type="text" name="name" id="name">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" name="email" id="email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea class="materialize-textarea" name="message" id="message"
+                                data-length="500" minlength="5" maxlength="500"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <input type="submit" value="Submit" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
 {% endblock %}
