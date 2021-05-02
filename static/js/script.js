@@ -6,6 +6,7 @@ $(document).ready(function () {
     $(".sidenav").sidenav();
     $('.collapsible').collapsible();
     $('.modal').modal();
+    $('input#recipe_name, textarea#recipe_description, textarea#recipe_ingredients, textarea#recipe_steps').characterCounter();
     });
 
 
@@ -13,7 +14,7 @@ $(document).ready(function () {
 
 const slider = document.querySelector('.slider');
 M.Slider.init(slider, {
-    indicators: false,
+    indicators: true,
     height: 500,
     transition:500,
     interval: 6000

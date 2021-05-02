@@ -34,7 +34,7 @@ def register():
 
         if existing_user:
             flash("Username already exists")
-            return redirect(url_for("register"))
+            return redirect(url_for("register", _external=True, _scheme='https'))
 
         register = {
             "username": request.form.get("username").lower(),
@@ -47,7 +47,7 @@ def register():
         # put the new user in 'session'
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", _external=True, _scheme='https', username=session["user"]))
 
     return render_template("register.html")
 
@@ -64,14 +64,14 @@ def login():
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
-                    "profile", username=session["user"]))
+                    "profile", _external=True, _scheme='https', username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+                return redirect(url_for("login", _external=True, _scheme='https'))
 
         else:
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
+            return redirect(url_for("login", _external=True, _scheme='https'))
 
     return render_template("login.html")
 
@@ -85,53 +85,59 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("login", _external=True, _scheme='https'))
 
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("login", _external=True, _scheme='https'))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if request.method == "POST":
-        recipe = {
-            "recipe_name": request.form.get("recipe_name"),
-            "prep_time": request.form.get("prep_time"),
-            "image_url": request.form.get("image_url"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_steps": request.form.get("recipe_steps"),
-            "created_by": session["user"]
-        }
-        mongo.db.recipes.insert_one(recipe)
-        flash("Thank You for adding your recipe")
-        return redirect(url_for("get_recipe"))
+    if "user" in session:
+        if request.method == "POST":
+            recipe = {
+                "recipe_name": request.form.get("recipe_name"),
+                "prep_time": request.form.get("prep_time"),
+                "image_url": request.form.get("image_url"),
+                "recipe_description": request.form.get("recipe_description"),
+                "recipe_ingredients": request.form.get("recipe_ingredients"),
+                "recipe_steps": request.form.get("recipe_steps"),
+                "created_by": session["user"]
+            }
+            mongo.db.recipes.insert_one(recipe)
+            flash("Thank You for adding your recipe")
+            return redirect(url_for("get_recipe", _external=True, _scheme='https'))
 
-    return render_template("add_recipe.html")
+        return render_template("add_recipe.html")
+    flash("Please Login to your Account")
+    return redirect(url_for("login", _external=True, _scheme='https'))
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST":
-        submit = {
-            "recipe_name": request.form.get("recipe_name"),
-            "prep_time": request.form.get("prep_time"),
-            "image_url": request.form.get("image_url"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_steps": request.form.get("recipe_steps"),
-            "created_by": session["user"]
-        }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Thank You for editing your recipe")
-        return redirect(url_for("get_recipe"))
+    if "user" in session:
+        if request.method == "POST":
+            submit = {
+                "recipe_name": request.form.get("recipe_name"),
+                "prep_time": request.form.get("prep_time"),
+                "image_url": request.form.get("image_url"),
+                "recipe_description": request.form.get("recipe_description"),
+                "recipe_ingredients": request.form.get("recipe_ingredients"),
+                "recipe_steps": request.form.get("recipe_steps"),
+                "created_by": session["user"]
+            }
+            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+            flash("Thank You for editing your recipe")
+            return redirect(url_for("get_recipe", _external=True, _scheme='https'))
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe)
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        return render_template("edit_recipe.html", recipe=recipe)
+    flash("Please Login to your Account")
+    return redirect(url_for("login", _external=True, _scheme='https'))
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -146,6 +152,7 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("index.html", recipes=recipes)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

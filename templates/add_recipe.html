@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-hamburger prefix teal-text text-lighten-1"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                    <input id="recipe_name" name="recipe_name" data-length="50" minlength="5" maxlength="50" type="text" class="validate"
                         required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-stopwatch prefix teal-text text-lighten-1"></i>
-                    <textarea id="prep_time" name="prep_time" minlength="5" maxlength="50"
+                    <textarea id="prep_time" name="prep_time" data-length="50" minlength="2" maxlength="50"
                         class="materialize-textarea validate" required></textarea>
                     <label for="prep_time">Preparation Time (in minutes)</label>
                 </div>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-blender prefix teal-text text-lighten-1"></i>
-                    <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="500"
+                    <textarea id="recipe_description" name="recipe_description" data-length="500" minlength="5" maxlength="500"
                         class="materialize-textarea validate" required></textarea>
                     <label for="recipe_description">Recipe Description</label>
                 </div>
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-shopping-basket prefix teal-text text-lighten-1"></i>
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="1000"
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" data-length="1000" minlength="5" maxlength="1000"
                         class="materialize-textarea validate" required></textarea>
                     <label for="recipe_ingredients">Ingredients</label>
                 </div>
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ol prefix teal-text text-lighten-1"></i>
-                    <textarea id="recipe_steps" name="recipe_steps" minlength="5" maxlength="1000"
+                    <textarea id="recipe_steps" name="recipe_steps" data-length="1000"  minlength="5" maxlength="1000"
                         class="materialize-textarea validate" required></textarea>
                     <label for="recipe_steps">Steps</label>
                 </div>
