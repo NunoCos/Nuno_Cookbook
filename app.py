@@ -34,7 +34,7 @@ def register():
 
         if existing_user:
             flash("Username already exists")
-            return redirect(url_for("register", _external=True, _scheme='https'))
+            return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),
@@ -47,7 +47,7 @@ def register():
         # put the new user in 'session'
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", _external=True, _scheme='https', username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -64,14 +64,14 @@ def login():
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
-                    "profile", _external=True, _scheme='https', username=session["user"]))
+                    "profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login", _external=True, _scheme='https'))
+                return redirect(url_for("login"))
 
         else:
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login", _external=True, _scheme='https'))
+            return redirect(url_for("login"))
 
     return render_template("login.html")
 
@@ -85,14 +85,15 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
-    return redirect(url_for("login", _external=True, _scheme='https'))
+    return redirect(url_for("login"))
+
 
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login", _external=True, _scheme='https'))
+    return redirect(url_for("login"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -110,11 +111,11 @@ def add_recipe():
             }
             mongo.db.recipes.insert_one(recipe)
             flash("Thank You for adding your recipe")
-            return redirect(url_for("get_recipe", _external=True, _scheme='https'))
+            return redirect(url_for("get_recipe"))
 
         return render_template("add_recipe.html")
     flash("Please Login to your Account")
-    return redirect(url_for("login", _external=True, _scheme='https'))
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -132,12 +133,12 @@ def edit_recipe(recipe_id):
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
             flash("Thank You for editing your recipe")
-            return redirect(url_for("get_recipe", _external=True, _scheme='https'))
+            return redirect(url_for("get_recipe"))
 
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         return render_template("edit_recipe.html", recipe=recipe)
     flash("Please Login to your Account")
-    return redirect(url_for("login", _external=True, _scheme='https'))
+    return redirect(url_for("login"))
 
 
 @app.route("/delete_recipe/<recipe_id>")

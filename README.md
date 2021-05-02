@@ -206,6 +206,9 @@ To get set up with a copy of my project you can do these multiple ways.
 
 [Stack Overflow](https://stackoverflow.com/questions/19179424/how-to-wrap-text-around-an-image-using-html-css/19179519)
 - Code for resizing image inside collapsible and adapted to my code
+
+[W3schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top)
+- Code for back to top button in main index page
 ---
 ## Resources Used
 - [Fontawesome Icons](https://fontawesome.com/)
@@ -219,7 +222,8 @@ To get set up with a copy of my project you can do these multiple ways.
 ---
 
 ## Acknowledgements
-
+I would like to thank my mentor, **Spencer Barriball**, for his help on this project and for providing me some tools that made my project easier,
+**Slack Community** for their assistance with minor coding issues and **Tutor Support** for for providing support that really helped me out.
 
 
 ---
