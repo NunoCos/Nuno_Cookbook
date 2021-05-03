@@ -5,6 +5,7 @@
 [Deployed page](https://my-cookbook-nuno.herokuapp.com/)
 
 ---
+
 ## Project description
 
 - What is 'Cookbook | Cookbook Website' - It's an app built with Flask and MongoDB. In this application I use technologies learnt on my coding journey to demonstrate how a document-based database can be utilise efficiently and effectively to create simple yet effective scalable apps on the web.
@@ -22,6 +23,27 @@ The app is designed to allow for users to create, store and manage recipes.
 Lots of people may use cookbooks to refer from when cooking a meal, this app allows user to then store they're cookbook recipes into one place.
 
 ---
+
+### Color pallet
+
+I've used [Coolors](https://coolors.co/) to get the colors for this project and have a good layout with content that stands out.
+
+---
+
+### Materialize
+I chose to use [Materialize](https://materializecss.com) for this project as I'm only familiar with bootstrap from before, and would like to try a new css framework. My aim during development has been to rely on materialize as much as possible, in order to write less custom CSS and JavaScript. This way, I have been able to focus on python for backend management. For this purpose, materilize has served the project well. As evident by taking a look at the script.js file, there's hardly any custom JavaScript, with only a few exceptions.
+
+---
+
+## User Stories
+
+- I want to have a place where I can upload my recipes
+- I want a dynamic website that works well on mobile also as I only rely on it
+- I want to be able to change my recipes if I need it
+- I want to be able to upload my recipe picture
+- I want a website that looks good to the eye and that as a good color impact
+---
+
 ## Wireframes 
 
 #### Homepage
@@ -52,15 +74,18 @@ Lots of people may use cookbooks to refer from when cooking a meal, this app all
 
 ## Features
 
-- User can add new recipies using their name and email.
+- User can add new recipies.
 - User can view all kind of recipes in website uploaded by him or other users
 - User can edit recipe uploaded by him
 - User can delete already added recipe uploaded by him
 - User can search recipies. 
-
+- On Navbar and Slider the content displayed changes if the user is logged in
 ---
-### Features Left to Implements
+## Features Left to Implement
 - Adding an online Store, so that is possible to sell recipe books and kitchen utensils
+- Due to space limitation on the database implement in the future possibility of uploading the png/jpg file
+- Adding the possibility of rating and commenting in the page
+
 ---
 
 ## Technologies Used
@@ -79,9 +104,24 @@ Lots of people may use cookbooks to refer from when cooking a meal, this app all
     
 - [MONGO DB](https://docs.mongodb.com/)
     - The project uses **Mongo DB** to store and retrieve the data.
-   
 
-### Testing
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
+- [HTML5](https://www.w3.org/) 
+
+- [CSS3](https://www.w3.org/)
+
+- [Pip](https://pip.pypa.io/en/stable/)
+
+- [JavaScript](https://www.javascript.com/)
+
+- [Github](https://www.github.com)
+
+- [Heroku](https://id.heroku.com/)
+
+- [Fontawesome Icons](https://fontawesome.com/)
+
+## Testing
 Most of the applications testing was done throughout development, most of which was manual tests. I will outline most of what I did below for documentation purposes.
 Login page
 
@@ -148,7 +188,7 @@ My app will be fully functional across all major modern browsers. I have tested 
 ---
 ## Deployment 
 
-##### GitHub Pages
+### GitHub Pages
 
 1. A local project was created in GitHub with a new repository called 'Mind-Gym-Project'
 2. The project had regular push and detailed commits which were pushed to the GitHub website before deployment
@@ -202,23 +242,23 @@ To get set up with a copy of my project you can do these multiple ways.
 - Recipe of the week code taken from this tutorial and adapted to my project
 
 [Code Institute](https://codeinstitute.net/)
-- CRUD functionality based on Task Manager functionality and Authentication process
+- CRUD functionality  and Authentication process based on Task Manager project
 
 [Stack Overflow](https://stackoverflow.com/questions/19179424/how-to-wrap-text-around-an-image-using-html-css/19179519)
 - Code for resizing image inside collapsible and adapted to my code
 
 [W3schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top)
 - Code for back to top button in main index page
+
 ---
 ## Resources Used
-- [Fontawesome Icons](https://fontawesome.com/)
+
 - [Flask Docs](http://flask.pocoo.org/docs/1.0/)
 - [Mongo Docs](https://docs.mongodb.com/)
 - [Slack](https://slack.com/intl/en-gb/)
 - [Google](https://google.com/)
 - [YouTube](https://www.youtube.com/)
 - [Unsplash](https://unsplash.com/)
-
 ---
 
 ## Acknowledgements

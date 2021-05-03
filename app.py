@@ -17,14 +17,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Entry point of app.
 @app.route("/")
 @app.route("/get_recipe")
 def get_recipe():
     recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes)
 
-
+# Register user
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -51,7 +51,7 @@ def register():
 
     return render_template("register.html")
 
-
+# Login user
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -75,7 +75,7 @@ def login():
 
     return render_template("login.html")
 
-
+# Render Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -87,7 +87,7 @@ def profile(username):
 
     return redirect(url_for("login"))
 
-
+# Logout user
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -95,7 +95,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# Add new Recipe - User needs to be logged in
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if "user" in session:
@@ -117,7 +117,7 @@ def add_recipe():
     flash("Please Login to your Account")
     return redirect(url_for("login"))
 
-
+# Edit new Recipe - User needs to be logged in
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if "user" in session:
@@ -140,14 +140,14 @@ def edit_recipe(recipe_id):
     flash("Please Login to your Account")
     return redirect(url_for("login"))
 
-
+# Delete Recipe.
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})s
     flash("Recipe Deleted")
     return redirect(url_for("get_recipe"))
 
-
+# Search Recipe.
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
